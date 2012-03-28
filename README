@@ -18,7 +18,7 @@ Add this upstream repo
     cd etherpad
     git remote add upstream -m master git://github.com/openshift/nodejs-example.git
     git pull -s recursive -X theirs upstream master
-    # note that the git pull above can be used later to pull updates to Etherpad
+    # note that the git pull above can be used later to pull updates
     # the rm and ln is there until I can figure out github and symbolic links 
 Then push the repo upstream
 
