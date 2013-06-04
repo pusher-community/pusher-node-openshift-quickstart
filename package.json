@@ -1,22 +1,23 @@
 {
-  "name": "OpenShift-Sample-App",
+  "name": "pusher-node-openshift-quickstart",
   "version": "1.0.0",
-  "description": "OpenShift Sample Application",
+  "description": "Pusher on OpenShift using Node.js QuickStart",
   "keywords": [
-    "OpenShift",
     "Node.js",
-    "application",
-    "openshift"
+    "openshift",
+    "pusher",
+    "realtime",
+    "websocket"
   ],
   "author": {
-    "name": "OpenShift",
-    "email": "ramr@example.org",
-    "url":  "http://www.openshift.com/"
+    "name": "Phil Leggetter",
+    "email": "phil@leggetter.co.uk",
+    "url":  "http://www.leggetter.co.uk"
   },
-  "homepage": "http://www.openshift.com/",
+  "homepage": "http://pusher.com/",
   "repository": {
     "type": "git",
-    "url": "https://gitub.com/openshift/origin-server"
+    "url": "https://gitub.com/pusher/pusher-node-openshift-quickstart"
   },
 
   "engines": {
@@ -25,6 +26,8 @@
   },
 
   "dependencies": {
+    "pusher": "0.1.3",
+    "express": "3.x"
   },
   "devDependencies": {},
   "bundleDependencies": [],
