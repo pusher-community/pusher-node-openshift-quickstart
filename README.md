@@ -1,29 +1,42 @@
-Node.js on OpenShift
-====================
+# Pusher on OpenShift using Node.js
 
-This git repository helps you get up and running quickly w/ a node.js installation
-on OpenShift. 
- 
-Running on OpenShift
-----------------------------
+This git repository provides a quickstart demonstrating how to use Pusher on OpenShift in a Node.js application using [expressjs](http://expressjs.com).
 
-Create an account at http://openshift.redhat.com/
+## Create an OpenShift App
 
-Create a nodejs-0.6 application (you can call your application whatever you want)
+Create an account at http://openshift.redhat.com and set up your local machine with the [client tools](https://www.openshift.com/get-started).
 
-    rhc app create -a nodejs -t nodejs-0.6
+Create a Node.js application. Rename `realtimeapp` to something else if you like.
 
-Add this upstream repo
+    rhc app create realtimeapp nodejs-0.6 --from-code https://github.com/pusher/pusher-node-openshift-quickstart
+    cd realtimeapp
 
-    cd nodejs
-    git remote add upstream -m master git://github.com/openshift/nodejs-example.git
-    git pull -s recursive -X theirs upstream master
-    # note that the git pull above can be used later to pull updates
-Then push the repo upstream
+## Sign up for a free Pusher account
 
-    git push
+1. Sign up via http://pusher.com/signup
+2. Take a note of your application credentials: `app_id`, `app_key` and `app_secret`
+3. Replace the values in `config.json` with the credentials
 
-That's it, you can now checkout your application at:
+## Deploy your Pusher application
 
-    http://nodejs-$yournamespace.rhcloud.com
+    git add .
+    git commit -m "my first commmit"
+    git push origin master
 
+## Run your Pusher application 
+
+* Visit `https://myapp-<yournamespace>.rhcloud.com`
+* Click on the `Trigger Hello World` button. This will result in a message being triggered and being broadcast to everybody viewing the page.
+
+## Where next?
+
+You can update the code in `server.js` to change how the message is triggered.
+
+You can also update the JavaScript in `views/index.ejs` to change the channel that is subscribed to, the event which is bound to and how the event is handled.
+
+## More Information
+
+* Pusher documentation: http://pusher.com/docs
+* Debugging your application: http://pusher.com/docs/debugging
+* Pusher client and server libraries: http://pusher.com/docs/libraries
+* Pusher Support on StackOverflow: http://stackoverflow.com/questions/tagged/pusher
